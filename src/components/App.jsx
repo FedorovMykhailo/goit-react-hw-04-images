@@ -60,7 +60,8 @@ const App = ()=> {
 //   }
 // }, [query,page])
   
-useEffect(() => { if (query) handleFetchPixabay() }, [query, page])
+  // useEffect(() => { if (query) handleFetchPixabay() }, [query, page])
+  useEffect(() => {if (query) handleFetchPixabay(query, page) }, [query, page])
   
   // useEffect(() => { 
      
@@ -77,7 +78,7 @@ useEffect(() => { if (query) handleFetchPixabay() }, [query, page])
   
   //useEffect(())
 
-  async function handleFetchPixabay () {
+ const handleFetchPixabay = async (query, page)=> {
     try {
      setIsLoading(true)
         const galery = await fetchPixabay(query, page);
