@@ -50,7 +50,7 @@ const App = ()=> {
 // }, [query,page])
   
   // useEffect(() => { if (query) handleFetchPixabay() }, [query, page])
-  useEffect(() => {if (query) handleFetchPixabay(query, page) }, [query, page])
+  useEffect(() => {if (query) return handleFetchPixabay(query, page) }, [query, page])
   
   // useEffect(() => { 
      
