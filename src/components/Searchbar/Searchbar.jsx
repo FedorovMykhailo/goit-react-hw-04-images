@@ -1,11 +1,7 @@
-import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class Searchbar extends Component {
-    render() {
-        const {submit} = this.props
-        return <>
-        <header className="Searchbar">
+const Searchbar = ({submit}) =>  {
+        return (<header className="Searchbar">
             <form className="SearchForm" onSubmit={submit}>
                 <button type="submit" className="SearchForm-button" >
                     <span className="button-label">Search</span>
@@ -19,10 +15,7 @@ class Searchbar extends Component {
                     placeholder="Search images and photos"
                 />
             </form>
-            </header>
-            </>
-    }
-
+            </header>)
 }
 
 Searchbar.propTypes = {

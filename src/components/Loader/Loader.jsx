@@ -1,8 +1,6 @@
-import React, { Component } from "react";
 import { ThreeDots } from  'react-loader-spinner'
 
-class Loader extends Component {
-    render() {
+const Loader =()=>  {
         return <div className="Loader">
                     <ThreeDots 
                      height="80" 
@@ -15,7 +13,6 @@ class Loader extends Component {
                         visible={true}
                     />
                 </div>
-    }
 }
 
 export default Loader

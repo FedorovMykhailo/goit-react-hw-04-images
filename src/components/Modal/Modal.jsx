@@ -1,29 +1,17 @@
-import React, { Component } from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 
-class Modal extends Component {
+const Modal = ({img, desc, clickOverlay}) => {
+    useEffect(() => {
+        document.addEventListener("keydown", clickOverlay)
+        return ()=>{document.removeEventListener("keydown",clickOverlay)}
+    },[clickOverlay])
 
-    
-    componentDidMount() {
-        document.addEventListener("keydown",this.handleModalClose )
-    }
-    
-    componentWillUnmount (){
-        document.removeEventListener("keydown",this.handleModalClose)
-    }
-
-    handleModalClose = (evt) => {
-         this.props.clickOverlay(evt) 
-    }
-
-    render() {
-        const {img, desc, clickOverlay} = this.props
         return  <div className="Overlay" onClick={clickOverlay} >
                     <div className="Modal">
                         <img src={img} alt={desc} />
                     </div>
                 </div>
-    }
 }
 
 Modal.propTypes = {
