@@ -107,7 +107,6 @@ const App = ()=> {
 
   const handleLoadMore = () => {
     setPage(prevPage => prevPage + 1)
-
     //this.setState((prev) => { return {page: prev.page+1}});
   }
 
@@ -116,7 +115,6 @@ const App = ()=> {
     const alt = evt.currentTarget.attributes.alt.value;
     setIsModal(true);
     setModal({img: src, desc: alt})
-
     // this.setState({ isModal: true, modal: {img: src, desc: alt}})
   }
 
