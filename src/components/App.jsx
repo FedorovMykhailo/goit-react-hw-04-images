@@ -8,17 +8,6 @@ import fetchPixabay from "../api/services"
 
 const App = ()=> {
 
-  // state = {
-  //   query: "",
-  //   galery: [],
-  //   isLoading: false,
-  //   error: null,
-  //   page: 1,
-  //   isModal: false,
-  //   modal: { img:'', desc:''}
-  // }
-
-  
    const [ query, setQuery] = useState("")
    const [ galery, setGalery] = useState([])
    const [ isLoading, setIsLoading] = useState(false)
@@ -80,9 +69,9 @@ const App = ()=> {
 
  const handleFetchPixabay = async (query, page)=> {
     try {
-     setIsLoading(true)
+        setIsLoading(true)
         const galery = await fetchPixabay(query, page);
-        setGalery(prev => { return [...prev, ...galery.hits] })
+        setGalery((prev) => { return [...prev, ...galery.hits] })
         // this.setState(prev => { return { galery: [...prev.galery, ...galery.hits] } });
         // setIsLoading(false)
       } catch (error) {
@@ -106,7 +95,7 @@ const App = ()=> {
   }
 
   const handleLoadMore = () => {
-    setPage(prevPage => prevPage + 1)
+    setPage((prevPage) => {return prevPage + 1})
     //this.setState((prev) => { return {page: prev.page+1}});
   }
 
